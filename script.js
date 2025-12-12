@@ -1,22 +1,4 @@
-// const apiKey = "YOUR_OPENWEATHER_API_KEY_HERE"; // Replace this with your actual key
-// const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-
-// const searchBox = document.querySelector(".search input");
-// const searchBtn = document.querySelector(".search button");
-
-// async function checkWeather(city){
-//     // Logic will be added tomorrow
-//     console.log("Function ready for city: " + city);
-// }
-
-// searchBtn.addEventListener("click", ()=>{
-//     checkWeather(searchBox.value);
-// });
-
-
-
-
-const apiKey = "YOUR_OPENWEATHER_API_KEY_HERE"; // Make sure your real key is here
+const apiKey = "d946fd832697d1c9b2f1166bf9ee3c83"; // Make sure your real key is here
     const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
     const searchBox = document.querySelector(".search input");
@@ -44,3 +26,6 @@ const apiKey = "YOUR_OPENWEATHER_API_KEY_HERE"; // Make sure your real key is he
     searchBtn.addEventListener("click", ()=>{
         checkWeather(searchBox.value);
     });
+
+
+    //7f3607978b06e9688ffe9cce904100f2
