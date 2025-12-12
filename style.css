@@ -1,5 +1,5 @@
 body {
-    background: #222;
+    background: #295c4b;
     font-family: 'Arial', sans-serif;
     display: flex;
     align-items: center;
@@ -31,7 +31,7 @@ body {
     outline: 0;
     background: #ebfffc;
     color: #555;
-    padding: 10px 25px;
+    padding: 10px 20px;
     height: 60px;
     border-radius: 30px;
     flex: 1;
@@ -44,8 +44,10 @@ body {
     outline: 0;
     background: #ebfffc;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 82px;
+    height: 82px;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
 }
 
