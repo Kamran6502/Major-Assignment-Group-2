@@ -1,14 +1,46 @@
-const apiKey = "YOUR_OPENWEATHER_API_KEY_HERE"; // Replace this with your actual key
-const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+// const apiKey = "YOUR_OPENWEATHER_API_KEY_HERE"; // Replace this with your actual key
+// const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
-const searchBox = document.querySelector(".search input");
-const searchBtn = document.querySelector(".search button");
+// const searchBox = document.querySelector(".search input");
+// const searchBtn = document.querySelector(".search button");
 
-async function checkWeather(city){
-    // Logic will be added tomorrow
-    console.log("Function ready for city: " + city);
-}
+// async function checkWeather(city){
+//     // Logic will be added tomorrow
+//     console.log("Function ready for city: " + city);
+// }
 
-searchBtn.addEventListener("click", ()=>{
-    checkWeather(searchBox.value);
-});
+// searchBtn.addEventListener("click", ()=>{
+//     checkWeather(searchBox.value);
+// });
+
+
+
+
+const apiKey = "YOUR_OPENWEATHER_API_KEY_HERE"; // Make sure your real key is here
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+    const searchBox = document.querySelector(".search input");
+    const searchBtn = document.querySelector(".search button");
+    const weatherIcon = document.querySelector(".weather-icon");
+
+    async function checkWeather(city) {
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+
+        if(response.status == 404){
+            document.querySelector(".weather").style.display = "none";
+            alert("Invalid City Name");
+        } else {
+            var data = await response.json();
+
+            document.querySelector(".city").innerHTML = data.name;
+            document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+            document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+            document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+            document.querySelector(".weather").style.display = "block";
+        }
+    }
+
+    searchBtn.addEventListener("click", ()=>{
+        checkWeather(searchBox.value);
+    });
